@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Блог - Юлія Мухачова</title>
+    <title>Юлія Мухачова</title>
     
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -12,7 +12,11 @@
 </head>
 <body>
         <div class="page-header">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
             <h1><a href="/">Блог Юлії Мухачової</a></h1>
+
         </div>
         <div class="content container">
             <div class="row">
